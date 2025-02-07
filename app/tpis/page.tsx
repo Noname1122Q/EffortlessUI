@@ -1,8 +1,6 @@
 import React from "react";
 
-type Props = {};
-
-const TPIsPage = (props: Props) => {
+const TPIsPage = () => {
   return (
     <main className="text-center py-20 px-6">
       <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-6 transition-colors duration-300">
