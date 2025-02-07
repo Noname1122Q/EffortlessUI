@@ -1,33 +1,11 @@
 "use client";
 import { useState, useEffect } from "react";
 import Head from "next/head";
-import { Moon, Sun } from "lucide-react";
 import Link from "next/link";
 import { SiGithub } from "react-icons/si";
+import LightDarkMode from "@/components/LightDarkMode";
 
 export default function HomePage() {
-  const [darkMode, setDarkMode] = useState(false);
-
-  useEffect(() => {
-    // Set initial theme based on local storage or default
-    const theme = localStorage.getItem("theme");
-    if (theme === "dark") {
-      setDarkMode(true);
-      document.documentElement.classList.add("dark");
-    }
-  }, []);
-
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-    if (darkMode) {
-      document.documentElement.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-    } else {
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-    }
-  };
-
   return (
     <>
       <Head>
@@ -40,35 +18,29 @@ export default function HomePage() {
           </h1>
           <nav className="space-x-4">
             <a
-              href="#"
+              href="/"
               className="text-gray-800 dark:text-gray-200 transition-colors duration-300"
             >
               Home
             </a>
             <a
-              href="#"
+              href="/tpis"
               className="text-gray-800 dark:text-gray-200 transition-colors duration-300"
             >
-              Docs
+              TPIs
             </a>
             <a
-              href="#"
+              href="/components"
               className="text-gray-800 dark:text-gray-200 transition-colors duration-300"
             >
               Components
             </a>
           </nav>
           <div className="flex flex-row gap-2">
-            <Link href={""}>
+            <Link href={"https://github.com/Noname1122Q/EffortlessUI"}>
               <SiGithub className="size-6 text-slate-800 dark:text-slate-300 transition-colors duration-300" />
             </Link>
-            <button onClick={toggleDarkMode} aria-label="Toggle Dark Mode">
-              {darkMode ? (
-                <Sun className="w-6 h-6 text-yellow-500" />
-              ) : (
-                <Moon className="w-6 h-6 text-gray-500" />
-              )}
-            </button>
+            <LightDarkMode />
           </div>
         </header>
 
@@ -84,7 +56,7 @@ export default function HomePage() {
           <div className="flex justify-center space-x-4">
             <a
               href="#"
-              className="px-6 py-3 rounded-lg border border-gray-300 dark:border-gray-600 text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors duration-300"
+              className="px-6 py-3 rounded-lg border border-gray-500 text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors duration-300"
             >
               Explore Components
             </a>
