@@ -18,10 +18,6 @@ const tpis = [
     groupLabel: "Auth",
     items: [
       {
-        label: "Clerk",
-        href: "/tpis/clerk",
-      },
-      {
         label: "Google OAuth",
         href: "/tpis/oauth",
       },
