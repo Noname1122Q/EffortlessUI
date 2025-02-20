@@ -3,8 +3,6 @@ import Step from "@/components/Step";
 import Heading from "@/components/ui/heading";
 import React from "react";
 
-const installation = `npm install @clerk/nextjs`;
-
 const steps = [
   {
     number: "1",
