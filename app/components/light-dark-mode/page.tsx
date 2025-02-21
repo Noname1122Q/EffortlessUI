@@ -1,8 +1,14 @@
 "use client";
-import CodeBlock from "@/components/ui/code-block";
+import Step from "@/components/Step";
+import Heading from "@/components/ui/heading";
 import React from "react";
 
-const codeString = `import { Moon, Sun } from "lucide-react";
+const steps = [
+  {
+    number: "1",
+    title: "Create Component",
+    description: "",
+    code: `import { Moon, Sun } from "lucide-react";
 import { useEffect, useState } from "react";
 
 export default function LightDarkMode() {
@@ -49,14 +55,36 @@ export default function LightDarkMode() {
       )}
     </button>
   );
-}`;
+}`,
+  },
+  {
+    number: "2",
+    title: "How to use?",
+    description: "Just call the component anywhere you would like to use it. ",
+    code: `<LightDarkMode />`,
+  },
+];
 
-const LightDarkModeComponent = () => {
+const page = () => {
   return (
-    <div>
-      <CodeBlock codeString={codeString} />
+    <div className="p-4 lg:p-12">
+      <Heading
+        title="Light Dark Mode"
+        description="Implementing light/dark mode functionality with local storage."
+      />
+      <div className="space-y-4 p-4 flex flex-col ">
+        {steps.map((step) => (
+          <Step
+            key={step.title}
+            number={step.number}
+            title={step.title}
+            description={step.description}
+            code={step.code}
+          />
+        ))}
+      </div>
     </div>
   );
 };
 
-export default LightDarkModeComponent;
+export default page;

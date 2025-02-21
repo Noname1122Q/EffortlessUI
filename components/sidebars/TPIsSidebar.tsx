@@ -33,15 +33,6 @@ const tpis = [
     ],
   },
   {
-    groupLabel: "AI",
-    items: [
-      {
-        label: "Gemini API",
-        href: "/tpis/gemini",
-      },
-    ],
-  },
-  {
     groupLabel: "Services",
     items: [
       {
